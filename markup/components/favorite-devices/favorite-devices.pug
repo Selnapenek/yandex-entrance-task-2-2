@@ -1,0 +1,48 @@
+include ../device/device.pug
+
+mixin favorite-devices(data)
+    section.favorite-devices-wrapper.main__section-wrapper
+        .main__section-header
+            .main__section_left
+                .section-title
+                    h4 Избранные устройства
+                .favorite-devices__switchers
+                    .favorite-devices__switcher_select Все
+                    .favorite-devices__switcher.favorite-devices__switcher_active Все
+                    .favorite-devices__switcher&attributes({'data-filter_type': 'position'}) Кухня
+                    .favorite-devices__switcher&attributes({'data-filter_type': 'position'}) Зал
+                    .favorite-devices__switcher&attributes({'data-filter_type': 'type'}) Лампочки
+            .arrows#favorite-devices-arrows
+                .arrow__left
+                .arrow__right
+        .favorite-devices
+            +device('Xiaomi Yeelight LED Smart Bulb', 'Включено', 'device__icon_icon-sun-2', 'Лампочки', 'Кухня')
+            +device('D-Link Omna 180 Cam', 'Включится в 17:00', 'device__icon_icon-sun', '', 'Кухня')
+            +device('Elgato Eve Degree Connected', 'Выключено до 17:00', 'device__icon_icon-temperature', 'Лампочки', 'Зал')
+            +device('LIFX Mini Day & Dusk A60 E27', 'Включится в 17:00', 'device__icon_icon-sun', '', 'Зал')
+            +device('Xiaomi Mi Air Purifier 2S', 'Включено', 'device__icon_icon-sun-2')
+            +device('Philips Zhirui', 'Выключено', 'device__icon_icon-sun')
+
+            // For scroll...
+            +device('Xiaomi Yeelight LED Smart Bulb', 'Включено', 'device__icon_icon-sun-2')
+            +device('D-Link Omna 180 Cam', 'Включится в 17:00')
+            +device('Elgato Eve Degree Connected', 'Выключено до 17:00')
+            +device('LIFX Mini Day & Dusk A60 E27', 'Включится в 17:00')
+            +device('Xiaomi Mi Air Purifier 2S', 'Включено')
+            +device('Philips Zhirui', 'Выключено')
+
+            +device('Xiaomi Yeelight LED Smart Bulb', 'Включено', 'device__icon_icon-sun-2')
+            +device('D-Link Omna 180 Cam', 'Включится в 17:00', 'device__icon_icon-sun')
+            +device('Elgato Eve Degree Connected', 'Выключено до 17:00', 'device__icon_icon-temperature')
+            +device('LIFX Mini Day & Dusk A60 E27', 'Включится в 17:00', 'device__icon_icon-sun')
+            +device('Xiaomi Mi Air Purifier 2S', 'Включено', 'device__icon_icon-sun-2')
+            +device('Philips Zhirui', 'Выключено', 'device__icon_icon-sun')
+
+            +device('Xiaomi Yeelight LED Smart Bulb', 'Включено', 'device__icon_icon-sun-2')
+            +device('D-Link Omna 180 Cam', 'Включится в 17:00')
+            +device('Elgato Eve Degree Connected', 'Выключено до 17:00')
+            +device('LIFX Mini Day & Dusk A60 E27', 'Включится в 17:00')
+            +device('Xiaomi Mi Air Purifier 2S', 'Включено')
+            +device('Philips Zhirui', 'Выключено')
+
+

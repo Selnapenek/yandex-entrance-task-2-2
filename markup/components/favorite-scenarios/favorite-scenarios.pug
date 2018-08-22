@@ -1,0 +1,28 @@
+include ../device/device.pug
+
+mixin favorite-scenarios(data)
+    section.favorite-scenarios-wrapper.main__section-wrapper
+        .main__section-header
+            .section-title
+                h4 Избранные сценарии
+            .arrows#favorite-scenarios-arrows
+                .arrow__left
+                .arrow__right
+        .horizontal-scroll-wrapper
+            .favorite-scenarios.horizontal-scroll__item
+                //TODO: заменить девайсы на сценарии, стили почти те же. Функционал другой.
+                +device('Выключить весь свет в доме и во дворе', '', 'device__icon_icon-sun-2')
+                +device('Я ухожу', '', 'device__icon_icon-scheduled')
+                +device('Включить свет в коридоре', '', 'device__icon_icon-sun-2')
+                +device('Набрать горячую ванну', 'Начнётся в 18:00', 'device__icon_icon-temperature-2')
+                +device('Сделать пол тёплым во всей квартире', '', 'device__icon_icon-temperature-2')
+
+            .favorite-scenarios.horizontal-scroll__item
+                +device('Выключить весь свет в доме и во дворе', '', 'device__icon_icon-sun-2')
+                +device('Я ухожу', '', 'device__icon_icon-scheduled')
+                +device('Включить свет в коридоре', '', 'device__icon_icon-sun-2')
+                +device('Набрать горячую ванну', 'Начнётся в 18:00', 'device__icon_icon-temperature-2')
+                +device('Сделать пол тёплым во всей квартире', '', 'device__icon_icon-temperature-2')
+
+
+

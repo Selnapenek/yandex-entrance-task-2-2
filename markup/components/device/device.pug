@@ -1,0 +1,6 @@
+mixin device(title, details, icon_class, device_type, device_position)
+    .device&attributes({'data-type' : device_type, 'data-position' : device_position})
+        .device__icon(class=icon_class)
+        .device__description
+            .device__title= title
+            .device__details= details

@@ -1,0 +1,27 @@
+mixin modal(data)
+    .modal-overlay.closed#modal-overlay
+    .modal.closed#modal
+        .modal-information
+            .modal-information-row
+                .modal-information-left
+                    .modal-information__title Elgato Eve Degree Connected
+                    .modal-information__details Включено
+                .modal-information-right
+                    //TODO: сделать при помощи SVG, привязать к слайдеру
+                    .modal-information__icon +23
+            .modal-information-row.modal-information__switchers
+                .modal-information__switcher.modal-information__switcher_active Вручную
+                .modal-information__switcher Холодно
+                .modal-information__switcher Тепло
+                .modal-information__switcher Жарко
+            .modal-information-row
+                .modal-information-slider
+                    .modal-information-slider__min -10
+                    .modal-information-slider__max +30
+                    .modal-information-slider__button
+                //TODO: Добавить круглый слайдер
+        .modal-information-row.modal-information-buttons
+            button.button-apply Применить
+            button.button-close#close-button Закрыть
+
+

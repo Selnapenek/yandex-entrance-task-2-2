@@ -1,0 +1,35 @@
+//TODO: глобально - под все брейкпоинты
+//TODO: сделать адаптивно под большие экраны
+.main{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: space-around;
+  padding-left: 40px;
+
+  .main__section-wrapper{
+    flex-grow: 1;
+  }
+
+  .main__section-header{
+    display: flex;
+    justify-content: space-between;
+
+    .main__section_left{
+      display: flex;
+    }
+  }
+
+  .main-row{
+    display: flex;
+
+    @media screen and (max-width: 375px) {
+      flex-direction: column;
+    }
+  }
+
+  @media screen and (max-width: 375px) {
+    padding: 20px 0 20px 20px;
+    margin-top: 39px;
+  }
+}

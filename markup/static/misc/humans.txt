@@ -1,0 +1,11 @@
+# humanstxt.org/
+# The humans responsible & technologies
+
+# TEAM
+
+    <name> Соломин Вячеслав Евгеньевич <role> Черно-рабочий <twitter>
+
+# TECHNOLOGIES
+
+    HTML5, CSS3, JS
+    

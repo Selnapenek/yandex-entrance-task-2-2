@@ -1,0 +1,55 @@
+.arrows{
+  display: flex;
+  align-items: center;
+  margin-right: 40px;
+  position: relative;
+
+
+  .arrow__left {
+    @include bg($arrow-left-png);
+    margin-right: 23px;
+    cursor: pointer;
+  }
+
+  .arrow__right{
+    @include bg($arrow-left-png);
+    transform: scale(-1, 1);
+    cursor: pointer;
+  }
+
+  @media screen and (max-width: 375px) {
+    display: none;
+  }
+}
+
+.arrows-vert{
+  position: relative;
+
+  .arrow__down{
+    @include bg($arrow-down-png);
+    transform: scale(1, -1);
+    position: absolute;
+    top: 12px;
+    left: -140px;
+    cursor: pointer;
+
+  }
+
+  .arrow__up{
+    @include bg($arrow-down-png);
+    position: absolute;
+    bottom: 12px;
+    left: -140px;
+    cursor: pointer;
+  }
+
+  @media screen and (max-width: 375px) {
+    display: none;
+  }
+}
+
+
+
+
+
+

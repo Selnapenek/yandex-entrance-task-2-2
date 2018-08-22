@@ -1,0 +1,42 @@
+.menu{
+  display: flex;
+  align-items: center;
+  margin-left: 39px;
+
+  .menu__item{
+    font-size: 16px;
+    opacity: 0.6;
+    line-height: 20px;
+    padding-left: 13px;
+    padding-right: 13px;
+
+    @media screen and (max-width: 375px) {
+      margin: 10px;
+    }
+  }
+
+  @media screen and (max-width: 375px) {
+    flex-direction: column;
+    display: none;
+    align-self: flex-end;
+    align-items: end;
+    // margin-left: auto;
+  }
+}
+
+.menu__icon{
+  @include bg($icon-list-m-png);
+  display: none;
+  cursor: pointer;
+
+  @media screen and (max-width: 375px) {
+    display: initial;
+    position: absolute;
+    right: 20px;
+  }
+}
+
+.menu_show {
+  display: flex;
+}
+

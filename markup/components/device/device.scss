@@ -1,0 +1,72 @@
+$device-bg-color: #F7F7F7;
+$device-bg-color-active: #FFFFFF;
+
+.device {
+  background-color: $device-bg-color;
+  border-radius: 25px;
+  width: 172px;
+  height: 72px;
+  min-width: 172px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  margin-right: 15px;
+  margin-bottom: 15px;
+  padding: 14px;
+
+  &:hover{
+    cursor: pointer;
+    background-color: #FFFFFF;
+    box-shadow: 0 2px 6px 0 rgba(197,186,186,0.50);
+  }
+
+  .device__description{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    .device__title{
+      @include font-main;
+      font-size: 14px;
+      color:$black;
+    }
+
+    .device__details{
+      @include font-etc;
+      font-size: 12px;
+      color:$gray;
+    }
+  }
+
+  //TODO: заменить svg на png
+  .device__icon_icon-scheduled {
+    @include bg-svg($icon-scheduled);
+  }
+
+  .device__icon_icon-sun {
+    @include bg-svg($icon-sun);
+  }
+
+  .device__icon_icon-sun-2 {
+    @include bg-svg($icon-sun-2);
+  }
+
+  .device__icon_icon-sun-max {
+    @include bg-svg($icon-sun-max);
+  }
+
+  .device__icon_icon-sun-min {
+    @include bg-svg($icon-sun-min);
+  }
+
+  .device__icon_icon-temperature {
+    @include bg-svg($icon-temperature);
+  }
+
+  .device__icon_icon-temperature-2 {
+    @include bg-svg($icon-temperature-2);
+  }
+
+}

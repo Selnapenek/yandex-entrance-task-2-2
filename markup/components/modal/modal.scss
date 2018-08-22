@@ -1,0 +1,253 @@
+//TODO: сделать адаптивным для маленьких экранов
+.modal{
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  z-index: 100;
+  left: 25%;
+  top: 25%;
+  width: 630px;
+  animation: blowUpModal 0.5s forwards;
+
+  .modal-information{
+    background: white;
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+    padding: 25px;
+
+    .modal-information-right{
+      @media screen and (max-width: 375px) {
+        display: none;
+      }
+    }
+
+    .modal-information-left{
+      @media screen and (max-width: 375px) {
+        padding: 21px 0 0 21px;
+      }
+    }
+
+    .modal-information__title{
+      font-size: 27px;
+      margin-bottom: 6px;
+
+      @media screen and (max-width: 375px) {
+        font-size: 18px;
+        margin-bottom: 5px;
+      }
+    }
+
+    .modal-information__details{
+      @include font-etc;
+      font-size: 14px;
+      margin-bottom: 20px;
+
+      @media screen and (max-width: 375px) {
+        font-size: 12px;
+        margin-bottom: 15px;
+      }
+    }
+
+    .modal-information__icon{
+      font-size: 36px;
+      display: flex;
+      align-items: center;
+      transition: 0s;
+
+      /* Да, я ленивая жопа */
+      &:after {
+        margin-left: 15px;
+        transform: scale(1.7);
+      }
+    }
+
+    .modal-information__icon_icon-sun{
+      &:after{
+        @include bg($icon-sun-png);
+        content: '';
+      }
+    }
+
+    .modal-information__icon_icon-temperature{
+      &:after{
+        @include bg($icon-temperature-png);
+        content: '';
+      }
+    }
+
+    .modal-information__icon_icon-temperature-2{
+      &:after{
+        @include bg($icon-temperature-2-png);
+        content: '';
+      }
+    }
+
+    @media screen and (max-width: 375px) {
+      width: 334px;
+      height: 492px;
+      padding: 0px;
+    }
+  }
+
+  .modal-information-row{
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .modal-information__switchers{
+    justify-content: flex-start;
+    margin-bottom: 25px;
+    overflow: auto;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    @media screen and (max-width: 375px) {
+      padding-left: 20px;
+    }
+  }
+
+  .modal-information__switcher {
+    @include font-main;
+    font-size: 13px;
+    background: #F2F1F0;
+    border-radius: 20px;
+    padding: 0px 15px 0px 15px;
+    margin-right: 10px;
+    line-height: 30px;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    @media screen and (max-width: 375px) {
+      font-size: 13px;
+    }
+  }
+
+  .modal-information__switcher_active {
+    background: #FFD93E;
+  }
+
+  .modal-information-slider{
+    width: 100%;
+    height: 60px;
+    border-radius: 30px;
+    position: relative;
+    padding: 0 20px 0 20px;
+    display: flex;
+    justify-content: inherit;
+    align-items: center;
+
+    .modal-information-slider__min,
+    .modal-information-slider__max{
+      color: #FFFFFF;
+      font-size: 18px;
+
+      @media screen and (max-width: 375px) {
+        transform: rotate(90deg);
+      }
+    }
+    .modal-information-slider__min{
+      &_sun-icon{
+        @include bg($icon-sun-min-png);
+      }
+    }
+    .modal-information-slider__max{
+      &_sun-icon{
+        @include bg($icon-sun-max-png);
+      }
+    }
+
+    .modal-information-slider__button{
+      position: absolute;
+      right: 30%;
+      border-radius: 50%;
+      border: 4px solid #FFFFFF;
+      width: 60px;
+      height: 60px;
+
+      &:before{
+        content: '';
+        display: block;
+        border-radius: 50%;
+        border: 3px solid rgba(51, 51, 51, 0.1);
+        width: 54px;
+        height: 54px;
+      }
+    }
+
+    @media screen and (max-width: 375px) {
+      transform: translate(0%,200%) rotate(-90deg);
+      margin-top: 15px;
+    }
+  }
+
+  .modal-information-slider__temperature{
+    background: linear-gradient(90deg, rgba(6,143,255,1), rgba(255,216,0,1), rgba(247,107,28,1));
+  }
+  .modal-information-slider__sun{
+    background: linear-gradient(90deg, rgba(255,230,130,1), rgba(255,158,0,1));
+  }
+
+  .modal-information-buttons{
+    @media screen and (max-width: 375px) {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+  button{
+    font-size: 18px;
+    width: 307px;
+    height: 60px;
+    border-radius: 20px;
+    margin-top: 20px;
+
+    @media screen and (max-width: 375px) {
+      width: 334px;
+    }
+  }
+  .button-close {
+    border: 0;
+    background: #FFFFFF;
+    color: #333333;
+  }
+  .button-apply {
+    border: 0;
+    background: #FFD93E;
+    color: #000000;
+  }
+
+  @media screen and (max-width: 375px) {
+    left: 5%;
+    top: 3%;
+    flex-direction: column;
+  }
+}
+
+.closed {
+  display: none;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 50;
+  background: rgba(51,51,51,0.5);
+
+}
+
+@keyframes blowUpModal {
+  0% {
+    transform:scale(0);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}

@@ -1,0 +1,24 @@
+mixin main-dashboard(data)
+    section.main-dashboard-wrapper.main__section-wrapper
+        h4.section-title Главное
+        .main-dashboard
+            .main-dashboard-left
+                .greeting
+                    h2.greeting__title Привет, Генадий!
+                    p.greeting__details Двери и окна закрыты, сигнализация включена.
+                .main-dashboard-informations
+                    .main-dashboard-information
+                        .main-dashboard-information__title Дома
+                        .main-dashboard-information__details +23
+                    .main-dashboard-information
+                        .main-dashboard-information__title За окном
+                        .main-dashboard-information__details.information__icon.information__icon_icon-cloud-drizzle +19
+            .main-dashboard-right.main-dashboard-devices
+                +device('Xiaomi Yeelight LED Smart Bulb', 'Включено', 'device__icon_icon-temperature')
+                +device('D-Link Omna 180 Cam', 'Включится в 17:00', 'device__icon_icon-sun')
+                +device('Xiaomi Yeelight LED Smart Bulb', 'Включено', 'device__icon_icon-temperature')
+                +device('D-Link Omna 180 Cam', 'Включится в 17:00', 'device__icon_icon-sun')
+            .arrows-vert#main-dashboard-arrows
+                .arrow__up
+                .arrow__down
+

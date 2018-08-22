@@ -1,0 +1,45 @@
+.favorite-scenarios-wrapper{
+  padding-left: 26px;
+  min-width: 49%;
+
+  @media screen and (max-width: 375px) {
+    padding: 0;
+  }
+}
+
+.favorite-scenarios{
+  min-width: 630px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding-right: 40px;
+
+  &:last-child{
+    padding-right: 20px;
+    @media screen and (max-width: 375px) {
+      padding-right: 0;
+    }
+  }
+
+  .device{
+    margin-right: 0;
+
+    &:nth-child(3n+2){
+      margin-right: 15px;
+      margin-left: 15px;
+    }
+
+    &:nth-child(n){
+      @media screen and (max-width: 375px) {
+        margin: 0 15px 15px 0;
+      }
+    }
+  }
+
+  @media screen and (max-width: 375px) {
+    flex-wrap: nowrap;
+    padding-right: 0;
+  }
+}
+
+

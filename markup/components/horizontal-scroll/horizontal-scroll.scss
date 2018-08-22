@@ -1,0 +1,22 @@
+.horizontal-scroll-wrapper{
+  display: flex;
+  flex-wrap: nowrap;
+  overflow: hidden;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  @media screen and (max-width: 375px) {
+    margin-left: -20px;
+    padding-left: 20px;
+    overflow: auto;
+  }
+}
+
+.horizontal-scroll__item{
+  min-width: 630px;
+  @media screen and (max-width: 375px) {
+    min-width: min-content;
+  }
+}
