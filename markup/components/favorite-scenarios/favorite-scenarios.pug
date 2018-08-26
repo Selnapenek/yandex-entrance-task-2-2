@@ -1,4 +1,4 @@
-include ../device/device.pug
+include ../scenario/scenario.pug
 
 mixin favorite-scenarios(data)
     section.favorite-scenarios-wrapper.main__section-wrapper
@@ -10,19 +10,18 @@ mixin favorite-scenarios(data)
                 .arrow__right
         .horizontal-scroll-wrapper
             .favorite-scenarios.horizontal-scroll__item
-                //TODO: заменить девайсы на сценарии, стили почти те же. Функционал другой.
-                +device('Выключить весь свет в доме и во дворе', '', 'device__icon_icon-sun-2')
-                +device('Я ухожу', '', 'device__icon_icon-scheduled')
-                +device('Включить свет в коридоре', '', 'device__icon_icon-sun-2')
-                +device('Набрать горячую ванну', 'Начнётся в 18:00', 'device__icon_icon-temperature-2')
-                +device('Сделать пол тёплым во всей квартире', '', 'device__icon_icon-temperature-2')
+                +scenario('Выключить весь свет в доме и во дворе', '', 'device__icon_icon-sun-2')
+                +scenario('Я ухожу', '', 'device__icon_icon-scheduled')
+                +scenario('Включить свет в коридоре', '', 'device__icon_icon-sun-2')
+                +scenario('Набрать горячую ванну', 'Начнётся в 18:00', 'device__icon_icon-temperature-2')
+                +scenario('Сделать пол тёплым во всей квартире', '', 'device__icon_icon-temperature-2')
 
             .favorite-scenarios.horizontal-scroll__item
-                +device('Выключить весь свет в доме и во дворе', '', 'device__icon_icon-sun-2')
-                +device('Я ухожу', '', 'device__icon_icon-scheduled')
-                +device('Включить свет в коридоре', '', 'device__icon_icon-sun-2')
-                +device('Набрать горячую ванну', 'Начнётся в 18:00', 'device__icon_icon-temperature-2')
-                +device('Сделать пол тёплым во всей квартире', '', 'device__icon_icon-temperature-2')
+                +scenario('Выключить весь свет в доме и во дворе', '', 'device__icon_icon-sun-2')
+                +scenario('Я ухожу', '', 'device__icon_icon-scheduled')
+                +scenario('Включить свет в коридоре', '', 'device__icon_icon-sun-2')
+                +scenario('Набрать горячую ванну', 'Начнётся в 18:00', 'device__icon_icon-temperature-2')
+                +scenario('Сделать пол тёплым во всей квартире', '', 'device__icon_icon-temperature-2')
 
 
 

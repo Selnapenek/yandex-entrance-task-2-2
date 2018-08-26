@@ -1,7 +1,7 @@
 $device-bg-color: #F7F7F7;
 $device-bg-color-active: #FFFFFF;
 
-.device {
+.device, .scenario {
   background-color: $device-bg-color;
   border-radius: 25px;
   width: 172px;
