@@ -41,7 +41,7 @@ $device-bg-color-active: #FFFFFF;
   }
 
   .device__icon_icon-scheduled {
-    @include bg-svg($icon-scheduled-png);
+    @include bg($icon-scheduled-png);
   }
 
   .device__icon_icon-sun {
