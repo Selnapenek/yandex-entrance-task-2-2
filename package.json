@@ -1,7 +1,7 @@
 {
-  "name": "awesome_project",
+  "name": "yanedx-entrance-task-2-2",
   "version": "1.0.0",
-  "description": "Your awesome project description",
+  "description": "Решение второго вступительного задания на версу в Школу разработки интерфейсов",
   "main": "gulpfile.js",
   "directories": {},
   "dependencies": {
@@ -13,6 +13,6 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "Соломин Вячеслав",
   "license": "ISC"
 }

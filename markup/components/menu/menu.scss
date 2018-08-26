@@ -17,10 +17,12 @@
 
   @media screen and (max-width: 375px) {
     flex-direction: column;
-    display: none;
+    height: 0;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.5s linear;
     align-self: flex-end;
     align-items: end;
-    // margin-left: auto;
   }
 }
 
@@ -37,6 +39,8 @@
 }
 
 .menu_show {
-  display: flex;
+  visibility: visible;
+  opacity: 1;
+  height: auto;
 }
 
