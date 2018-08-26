@@ -40,33 +40,32 @@ $device-bg-color-active: #FFFFFF;
     }
   }
 
-  //TODO: заменить svg на png
   .device__icon_icon-scheduled {
-    @include bg-svg($icon-scheduled);
+    @include bg-svg($icon-scheduled-png);
   }
 
   .device__icon_icon-sun {
-    @include bg-svg($icon-sun);
+    @include bg($icon-sun-png);
   }
 
   .device__icon_icon-sun-2 {
-    @include bg-svg($icon-sun-2);
+    @include bg($icon-sun-2-png);
   }
 
   .device__icon_icon-sun-max {
-    @include bg-svg($icon-sun-max);
+    @include bg($icon-sun-max-png);
   }
 
   .device__icon_icon-sun-min {
-    @include bg-svg($icon-sun-min);
+    @include bg($icon-sun-min-png);
   }
 
   .device__icon_icon-temperature {
-    @include bg-svg($icon-temperature);
+    @include bg($icon-temperature-png);
   }
 
   .device__icon_icon-temperature-2 {
-    @include bg-svg($icon-temperature-2);
+    @include bg($icon-temperature-2-png);
   }
 
 }
