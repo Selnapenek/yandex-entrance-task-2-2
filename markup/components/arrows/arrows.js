@@ -15,19 +15,27 @@ export default function(idArrwos, idScrollContainer) {
         hideArrow(rightArrow, scrollContainer, 'right');
 
         letArrow.addEventListener("click", function () {
-            scrollContainer.scrollBy({
-                top: 0,
-                left: -(scrollContainer.clientWidth - offsetLeft),
-                behavior: 'smooth'
-            });
+            if (document.documentMode || /Edge/.test(navigator.userAgent)) {
+                scrollContainer.scrollLeft += -(scrollContainer.clientWidth - offsetLeft);
+            } else {
+                scrollContainer.scrollBy({
+                    top: 0,
+                    left: -(scrollContainer.clientWidth - offsetLeft),
+                    behavior: 'smooth'
+                });
+            }
         });
 
         rightArrow.addEventListener("click", function () {
-            scrollContainer.scrollBy({
-                top: 0,
-                left: (scrollContainer.clientWidth - offsetLeft),
-                behavior: 'smooth'
-            });
+            if (document.documentMode || /Edge/.test(navigator.userAgent)) {
+                scrollContainer.scrollLeft += (scrollContainer.clientWidth - offsetLeft);
+            } else {
+                scrollContainer.scrollBy({
+                    top: 0,
+                    left: (scrollContainer.clientWidth - offsetLeft),
+                    behavior: 'smooth'
+                });
+            }
         });
 
         scrollContainer.addEventListener("scroll", function () {
@@ -43,19 +51,27 @@ export default function(idArrwos, idScrollContainer) {
         hideArrow(bottomArrow, scrollContainer, 'bottom');
 
         topArrow.addEventListener("click", function () {
-            scrollContainer.scrollBy({
-                top: -scrollContainer.clientHeight,
-                left: 0,
-                behavior: 'smooth'
-            });
+            if (document.documentMode || /Edge/.test(navigator.userAgent)) {
+                scrollContainer.scrollTop += -scrollContainer.clientHeight;
+            } else {
+                scrollContainer.scrollBy({
+                    top: -scrollContainer.clientHeight,
+                    left: 0,
+                    behavior: 'smooth'
+                });
+            }
         });
 
         bottomArrow.addEventListener("click", function () {
-            scrollContainer.scrollBy({
-                top: scrollContainer.clientHeight,
-                left: 0,
-                behavior: 'smooth'
-            });
+            if (document.documentMode || /Edge/.test(navigator.userAgent)) {
+                scrollContainer.scrollTop += scrollContainer.clientHeight;
+            } else {
+                scrollContainer.scrollBy({
+                    top: scrollContainer.clientHeight,
+                    left: 0,
+                    behavior: 'smooth'
+                });
+            }
         });
 
         scrollContainer.addEventListener("scroll", function () {
