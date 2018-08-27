@@ -1,15 +1,24 @@
 .favorite-devices-wrapper {
   width: 100%;
 
+  .main__section_left{
+    @media screen and (max-width: 375px) {
+      justify-content: space-between;
+      width: 100%;
+    }
+  }
+
   .favorite-devices__switchers {
     display: flex;
     justify-content: flex-start;
     align-items: center;
     margin-left: 13px;
+    margin-right: auto;
 
     @media screen and (max-width: 375px) {
       flex-direction: column;
-      align-items: baseline;
+      justify-content: space-between;
+      width: 100%;
     }
   }
 
@@ -38,6 +47,7 @@
       visibility: hidden;
       opacity: 0;
       transition: visibility 0s, opacity 0.5s ease;
+      margin-right: 0;
     }
   }
 
