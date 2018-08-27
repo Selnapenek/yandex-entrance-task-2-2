@@ -28,16 +28,12 @@
 
     @media screen and (max-width: 375px) {
       font-size: 13px;
+      display: none;
     }
   }
-
   .favorite-devices__switcher{
     @media screen and (max-width: 375px) {
-      font-size: 13px;
-      height: 0;
-      visibility: hidden;
-      opacity: 0;
-      transition: visibility 0s, opacity 0.5s linear;
+      margin: 5px 0;
     }
   }
 
@@ -73,10 +69,7 @@
   }
 
   .favorite-devices__switcher{
-    visibility: visible;
-    opacity: 1;
-    height: auto;
-    margin: 5px 0;
+    display: flex;
   }
 }
 
@@ -87,6 +80,7 @@
   overflow: hidden;
   margin-left: -40px;
   padding-left: 40px;
+  padding-top: 2px;
 
   &::-webkit-scrollbar {
     display: none;
