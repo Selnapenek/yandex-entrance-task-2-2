@@ -32,4 +32,8 @@
     padding: 20px 0 20px 20px;
     margin-top: 39px;
   }
+
+  @media screen and (min-height: 756px) {
+    margin-bottom: 64px;
+  }
 }
