@@ -16,7 +16,6 @@
 // Var for using custom font
 $CustomFont: 'CustomFont', Helvetica, Arial, sans-serif;
 */
-//TODO: нормально прописать и изменить везде что бы по красоте было. + через em
 @mixin font-main{
   font-family: Arial;
   font-weight: bold;
