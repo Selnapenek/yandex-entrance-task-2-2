@@ -2,7 +2,8 @@
 Решение задания на верстку.
 
 Для запуска используйте команду 
-<code>tars dev</code>
+<code>tars dev</code><br>
+Либо можете посмотреть https://selnapenek.github.io/yandex-entrance-task-2-2/<br>
 
 Исходники находятся в папке markup.
 
