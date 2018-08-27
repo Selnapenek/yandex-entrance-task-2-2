@@ -2,11 +2,10 @@
 .modal{
   display: flex;
   flex-direction: column;
-  position: fixed;
-  z-index: 100;
-  left: 25%;
-  top: 25%;
   width: 630px;
+  margin: 0 auto;
+  justify-content: center;
+
   animation: blowUpModal 0.5s forwards;
 
   .modal-information{
@@ -64,21 +63,21 @@
 
     .modal-information__icon_icon-sun{
       &:after{
-        @include bg($icon-sun-png);
+        @include bg-svg($icon-sun);
         content: '';
       }
     }
 
     .modal-information__icon_icon-temperature{
       &:after{
-        @include bg($icon-temperature-png);
+        @include bg-svg($icon-temperature);
         content: '';
       }
     }
 
     .modal-information__icon_icon-temperature-2{
       &:after{
-        @include bg($icon-temperature-2-png);
+        @include bg-svg($icon-temperature-2);
         content: '';
       }
     }
@@ -106,6 +105,8 @@
 
     @media screen and (max-width: 375px) {
       padding-left: 20px;
+      margin-right: 2px;
+      margin-left: 2px;
     }
   }
 
@@ -147,9 +148,10 @@
       font-size: 18px;
 
       @media screen and (max-width: 375px) {
-        transform: rotate(90deg);
+        margin: 15px;
       }
     }
+
     .modal-information-slider__min{
       &_sun-icon{
         @include bg($icon-sun-min-png);
@@ -177,19 +179,109 @@
         width: 54px;
         height: 54px;
       }
+
+      @media screen and (max-width: 375px) {
+        right: auto;
+        left: auto;
+        top: 90px;
+      }
     }
 
     @media screen and (max-width: 375px) {
-      transform: translate(0%,200%) rotate(-90deg);
-      margin-top: 15px;
+      width: 60px;
+      height: 336px;
+      padding: 0;
+      margin: 0 auto;
+      flex-direction: column;
     }
   }
 
   .modal-information-slider__temperature{
     background: linear-gradient(90deg, rgba(6,143,255,1), rgba(255,216,0,1), rgba(247,107,28,1));
+
+    .modal-information-slider__selection,
+    .modal-information-slider__holder{
+      display: none;
+    }
+
+    @media screen and (max-width: 375px) {
+      background: linear-gradient(0deg, rgba(6,143,255,1), rgba(255,216,0,1), rgba(247,107,28,1));
+    }
   }
   .modal-information-slider__sun{
     background: linear-gradient(90deg, rgba(255,230,130,1), rgba(255,158,0,1));
+
+    .modal-information-slider__selection,
+    .modal-information-slider__holder{
+      display: none;
+    }
+
+    @media screen and (max-width: 375px) {
+      background: linear-gradient(0deg, rgba(255,230,130,1), rgba(255,158,0,1));
+      flex-direction: column-reverse;
+    }
+  }
+
+  .modal-information-slider__round{
+    display: grid;
+    position: relative;
+    width: auto;
+    height: auto;
+    border-radius: 50%;
+    cursor: pointer;
+    margin: 0 auto;
+
+    .modal-information-slider__selection{
+      width: 178px;
+      height: 178px;
+      border-radius: 50%;
+      @include bg-svg($oval);
+      grid-row: 1;
+      grid-column: 1;
+      justify-self: center;
+      align-self: center;
+      pointer-events: none;
+    }
+
+    .modal-information-slider__holder{
+      width: 178px;
+      height: 178px;
+      background: rgba(255, 255, 255, 1);
+      border-radius: 50%;
+      grid-row: 1;
+      grid-column: 1;
+      justify-self: center;
+      align-self: center;
+      pointer-events: none;
+      z-index: 2;
+      text-align: center;
+      line-height: 178px;
+      font-size: 3.5em;
+      box-shadow: 0 2px 4px 0 rgba(134,121,71,0.45);
+
+      &:after {
+        display: block;
+        content: "";
+        top: calc(10% - 7px);
+        position: absolute;
+        left: calc(50% - 8px);
+        transform-origin: 1px 100%;
+        transform: rotate(0deg);
+        border: 8px solid transparent;
+        border-bottom: 9px solid $black;
+      }
+    }
+    
+    .modal-information-slider__min,
+    .modal-information-slider__max,
+    .modal-information-slider__button{
+      display: none;
+    }
+
+    @media screen and (max-width: 375px) {
+      transform: translate(0) rotate(0deg);
+      margin-top: 100px;
+    }
   }
 
   .modal-information-buttons{
@@ -221,26 +313,27 @@
   }
 
   @media screen and (max-width: 375px) {
-    left: 5%;
-    top: 3%;
+    width: auto;
     flex-direction: column;
   }
-}
-
-.closed {
-  display: none;
 }
 
 .modal-overlay {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   z-index: 50;
   background: rgba(51,51,51,0.5);
-
+  display: flex;
+  justify-content: center;
 }
+
+.closed {
+  display: none;
+}
+
 
 @keyframes blowUpModal {
   0% {
